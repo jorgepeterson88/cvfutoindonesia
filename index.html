@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV FUTO INDONESIA - Creative Advertising Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&display=swap');
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #0a0a0a;
+        }
+
+        .brand-font {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-bg {
+            background: var(--primary-gradient);
+        }
+
+        .gradient-bg-secondary {
+            background: var(--secondary-gradient);
+        }
+
+        .gradient-bg-accent {
+            background: var(--accent-gradient);
+        }
+
+        .gradient-bg-dark {
+            background: var(--dark-gradient);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(102, 126, 234, 0.8),
+                         0 0 20px rgba(102, 126, 234, 0.6),
+                         0 0 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: scale(1.05) rotateZ(2deg);
+        }
+
+        .blob-animation {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.7;
+            animation: blob 7s infinite;
+        }
+
+        @keyframes blob {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-secondary {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .footer-gradient {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+        }
+
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .brand-font {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Parallax Background -->
+    <div class="parallax-bg">
+        <div class="blob-animation gradient-bg w-96 h-96 top-10 left-10"></div>
+        <div class="blob-animation gradient-bg-secondary w-80 h-80 top-1/2 right-20"></div>
+        <div class="blob-animation gradient-bg-accent w-64 h-64 bottom-20 left-1/3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">F</span>
+                    </div>
+                    <h1 class="brand-font text-3xl gradient-text">FUTO INDONESIA</h1>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-400 transition">Beranda</a>
+                    <a href="#services" class="hover:text-purple-400 transition">Layanan</a>
+                    <a href="#about" class="hover:text-purple-400 transition">Tentang</a>
+                    <a href="#portfolio" class="hover:text-purple-400 transition">Portfolio</a>
+                    <a href="#contact" class="hover:text-purple-400 transition">Kontak</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 w-64 h-full bg-gray-900 z-50 p-6">
+            <button id="close-menu" class="text-white mb-8">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="hover:text-purple-400 transition">Beranda</a>
+                <a href="#services" class="hover:text-purple-400 transition">Layanan</a>
+                <a href="#about" class="hover:text-purple-400 transition">Tentang</a>
+                <a href="#portfolio" class="hover:text-purple-400 transition">Portfolio</a>
+                <a href="#contact" class="hover:text-purple-400 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="slide-in">
+                <h1 class="brand-font text-6xl md:text-8xl mb-6 neon-glow">
+                    FUTO<br>
+                    <span class="text-gradient-secondary">INDONESIA</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
+                    Creative Advertising Agency yang mengubah ide brilian menjadi kampanye yang memukau dan hasil yang luar biasa
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="cta-button gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition">
+                        Mulai Proyek Anda
+                    </button>
+                    <button class="border-2 border-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-purple-500 transition">
+                        Lihat Portfolio
+                    </button>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator mt-16">
+                <i class="fas fa-chevron-down text-2xl text-purple-400"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="brand-font text-5xl md:text-6xl mb-4 gradient-text">Layanan Kami</h2>
+                <p class="text-xl text-gray-300">Solusi kreatif lengkap untuk kebutuhan advertising Anda</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gradient-primary">Branding & Design</h3>
+                    <p class="text-gray-300">Desain branding yang memukau dan identitas visual yang kuat untuk bisnis Anda</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 gradient-bg-secondary rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bullhorn text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gradient-secondary">Digital Campaign</h3>
+                    <p class="text-gray-300">Kampanye digital yang kreatif dan efektif untuk meningkatkan brand awareness</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 gradient-bg-accent rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Video Production</h3>
+                    <p class="text-gray-300">Produksi video berkualitas tinggi untuk iklan TV, digital, dan konten sosial media</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 gradient-bg-dark rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Social Media Marketing</h3>
+                    <p class="text-gray-300">Strategi social media yang engagement dan meningkatkan konversi</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gradient-primary">SEO & SEM</h3>
+                    <p class="text-gray-300">Optimasi mesin pencari dan iklan berbayar untuk visibility maksimal</p>
+                </div>
+
+                <div class="service-card p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 gradient-bg-secondary rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gradient-secondary">Creative Strategy</h3>
+                    <p class="text-gray-300">Strategi kreatif yang inovatif dan tailored untuk brand Anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="brand-font text-5xl md:text-6xl mb-6 gradient-text">Tentang FUTO</h2>
+                    <p class="text-xl text-gray-300 mb-6">
+                        <strong class="text-gradient-primary">CV FUTO INDONESIA</strong> adalah creative advertising agency yang berdedikasi untuk menciptakan kampanye yang tidak hanya indah secara visual, tetapi juga memberikan hasil nyata bagi bisnis klien.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Dengan tim yang terdiri dari creative professionals berpengalaman, kami menggabungkan ide-ide brilian dengan strategi pemasaran yang efektif untuk menghasilkan campaign yang memorable dan impactful.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center">
+                            <h3 class="text-4xl font-bold text-gradient-primary mb-2">50+</h3>
+                            <p class="text-gray-300">Proyek Selesai</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-4xl font-bold text-gradient-secondary mb-2">30+</h3>
+                            <p class="text-gray-300">Klien Puas</p>
+                        </div>
+                    </div>
+
+                    <button class="cta-button gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition">
+                        Kenali Kami Lebih Lanjut
+                    </button>
+                </div>
+
+                <div class="relative">
+                    <div class="gradient-bg p-1 rounded-2xl">
+                        <div class="bg-gray-900 p-8 rounded-2xl">
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 gradient-bg-accent rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-rocket text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Inovatif</h4>
+                                        <p class="text-gray-300">Selalu menghadirkan ide-ide segar dan out-of-the-box</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 gradient-bg-secondary rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-chart-line text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Result-Oriented</h4>
+                                        <p class="text-gray-300">Fokus pada hasil yang terukur dan ROI maksimal</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 gradient-bg-dark rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-users text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Collaborative</h4>
+                                        <p class="text-gray-300">Bekerja sama dengan klien sebagai mitra strategis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="brand-font text-5xl md:text-6xl mb-4 gradient-text">Portfolio</h2>
+                <p class="text-xl text-gray-300">Karya-karya terbaik kami yang menginspirasi</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-2xl hover-lift">
+                    <div class="gradient-bg p-1">
+                        <div class="bg-gray-900 p-6 rounded-2xl h-64 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-ad text-6xl text-purple-400 mb-4"></i>
+                                <h3 class="text-xl font-bold">Campaign Fashion Brand</h3>
+                                <p class="text-gray-300">Digital Campaign</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl hover-lift">
+                    <div class="gradient-bg-secondary p-1">
+                        <div class="bg-gray-900 p-6 rounded-2xl h-64 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-utensils text-6xl text-pink-400 mb-4"></i>
+                                <h3 class="text-xl font-bold">F&B Brand Launch</h3>
+                                <p class="text-gray-300">Branding & Launch Campaign</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl hover-lift">
+                    <div class="gradient-bg-accent p-1">
+                        <div class="bg-gray-900 p-6 rounded-2xl h-64 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-mobile-alt text-6xl text-blue-400 mb-4"></i>
+                                <h3 class="text-xl font-bold">Tech App Promotion</h3>
+                                <p class="text-gray-300">Social Media Campaign</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="cta-button border-2 border-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-purple-500 transition">
+                    Lihat Semua Portfolio
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="brand-font text-5xl md:text-6xl mb-4 gradient-text">Testimoni Klien</h2>
+                <p class="text-xl text-gray-300">Apa kata klien tentang kerja sama dengan FUTO</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Andi Wijaya</h4>
+                            <p class="text-gray-300 text-sm">CEO Fashion Brand</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"FUTO mengubah brand kami menjadi fenomena di social media. Kreativitas mereka luar biasa!"</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 gradient-bg-secondary rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">S</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Siti Nurhaliza</h4>
+                            <p class="text-gray-300 text-sm">Marketing Director</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Campaign yang mereka buat tidak hanya keren, tapi juga memberikan ROI yang fantastic."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 gradient-bg-accent rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">B</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Budi Santoso</h4>
+                            <p class="text-gray-300 text-sm">Startup Founder</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Tim FUTO sangat profesional dan responsif. Mereka memahami visi kami dengan sempurna."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="brand-font text-5xl md:text-6xl mb-4 gradient-text">Hubungi Kami</h2>
+                <p class="text-xl text-gray-300">Mari wujudkan campaign impian Anda bersama FUTO</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="gradient-bg p-1 rounded-2xl">
+                    <div class="bg-gray-900 p-8 rounded-2xl">
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Nama Lengkap</label>
+                                    <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-purple-500 focus:outline-none text-white" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Email</label>
+                                    <input type="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-purple-500 focus:outline-none text-white" placeholder="john@example.com">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Perusahaan</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-purple-500 focus:outline-none text-white" placeholder="PT. Example">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Layanan yang Dibutuhkan</label>
+                                <select class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-purple-500 focus:outline-none text-white">
+                                    <option>Branding & Design</option>
+                                    <option>Digital Campaign</option>
+                                    <option>Video Production</option>
+                                    <option>Social Media Marketing</option>
+                                    <option>SEO & SEM</option>
+                                    <option>Creative Strategy</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Pesan</label>
+                                <textarea rows="5" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-purple-500 focus:outline-none text-white" placeholder="Ceritakan tentang proyek Anda..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full cta-button gradient-bg text-white py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition">
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-phone text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Telepon</h4>
+                        <p class="text-gray-300">+62 21 1234 5678</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-bg-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-envelope text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Email</h4>
+                        <p class="text-gray-300">hello@futoindonesia.com</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Alamat</h4>
+                        <p class="text-gray-300">Jakarta, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-gradient py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">F</span>
+                        </div>
+                        <h3 class="brand-font text-2xl gradient-text">FUTO INDONESIA</h3>
+                    </div>
+                    <p class="text-gray-300">Creative Advertising Agency yang mengubah ide menjadi karya nyata.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-purple-400 transition">Branding & Design</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Digital Campaign</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Video Production</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Social Media Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-purple-400 transition">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Karir</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="privacy.html" class="hover:text-purple-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-purple-400 transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 mb-4 md:mb-0">&copy; 2024 CV FUTO INDONESIA. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.blob-animation');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Create success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg z-50';
+            successMessage.textContent = 'Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.';
+            document.body.appendChild(successMessage);
+            
+            // Remove message after 3 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+            
+            // Reset form
+            e.target.reset();
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) rotateZ(2deg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotateZ(0deg)';
+            });
+        });
+
+        // Dynamic year in footer
+        const currentYear = new Date().getFullYear();
+        document.querySelector('footer p').innerHTML = `&copy; ${currentYear} CV FUTO INDONESIA. All rights reserved.`;
+    </script>
+</body>
+</html>

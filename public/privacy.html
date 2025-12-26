@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - CV FUTO INDONESIA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&display=swap');
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #0a0a0a;
+        }
+
+        .brand-font {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-bg {
+            background: var(--primary-gradient);
+        }
+
+        .gradient-bg-secondary {
+            background: var(--secondary-gradient);
+        }
+
+        .gradient-bg-accent {
+            background: var(--accent-gradient);
+        }
+
+        .gradient-bg-dark {
+            background: var(--dark-gradient);
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-gradient {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .blob-animation {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.7;
+            animation: blob 7s infinite;
+        }
+
+        @keyframes blob {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        @media (max-width: 768px) {
+            .brand-font {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Parallax Background -->
+    <div class="parallax-bg">
+        <div class="blob-animation gradient-bg w-96 h-96 top-10 left-10"></div>
+        <div class="blob-animation gradient-bg-secondary w-80 h-80 top-1/2 right-20"></div>
+        <div class="blob-animation gradient-bg-accent w-64 h-64 bottom-20 left-1/3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">F</span>
+                    </div>
+                    <h1 class="brand-font text-3xl gradient-text">FUTO INDONESIA</h1>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-purple-400 transition">
+                        <i class="fas fa-home mr-2"></i>Beranda
+                    </a>
+                    <a href="index.html#services" class="hover:text-purple-400 transition">Layanan</a>
+                    <a href="index.html#about" class="hover:text-purple-400 transition">Tentang</a>
+                    <a href="index.html#portfolio" class="hover:text-purple-400 transition">Portfolio</a>
+                    <a href="index.html#contact" class="hover:text-purple-400 transition">Kontak</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 w-64 h-full bg-gray-900 z-50 p-6">
+            <button id="close-menu" class="text-white mb-8">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="hover:text-purple-400 transition">
+                    <i class="fas fa-home mr-2"></i>Beranda
+                </a>
+                <a href="index.html#services" class="hover:text-purple-400 transition">Layanan</a>
+                <a href="index.html#about" class="hover:text-purple-400 transition">Tentang</a>
+                <a href="index.html#portfolio" class="hover:text-purple-400 transition">Portfolio</a>
+                <a href="index.html#contact" class="hover:text-purple-400 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-20 relative z-10">
+        <div class="container mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="brand-font text-5xl md:text-6xl mb-4 gradient-text">Privacy Policy</h1>
+                <p class="text-xl text-gray-300">Terakhir diperbarui: 1 Januari 2024</p>
+            </div>
+
+            <!-- Content -->
+            <div class="max-w-4xl mx-auto">
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-primary">1. Informasi yang Kami Kumpulkan</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Di <strong class="text-gradient-primary">CV FUTO INDONESIA</strong>, kami menghargai privasi Anda dan berkomitmen untuk melindungi informasi pribadi Anda. Berikut adalah jenis informasi yang kami kumpulkan:</p>
+                        
+                        <div class="ml-6">
+                            <h3 class="text-xl font-semibold mb-3 text-white">Informasi Pribadi:</h3>
+                            <ul class="list-disc list-inside space-y-2 ml-4">
+                                <li>Nama lengkap</li>
+                                <li>Alamat email</li>
+                                <li>Nomor telepon</li>
+                                <li>Nama perusahaan</li>
+                                <li>Alamat fisik</li>
+                            </ul>
+                        </div>
+
+                        <div class="ml-6">
+                            <h3 class="text-xl font-semibold mb-3 text-white">Informasi Teknis:</h3>
+                            <ul class="list-disc list-inside space-y-2 ml-4">
+                                <li>Alamat IP</li>
+                                <li>Jenis browser</li>
+                                <li>Informasi perangkat</li>
+                                <li>Data penggunaan website</li>
+                                <li>Cookie dan teknologi tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-secondary">2. Cara Kami Menggunakan Informasi Anda</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Kami menggunakan informasi yang kami kumpulkan untuk:</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 ml-6">
+                            <li>Menyediakan layanan creative advertising yang Anda minta</li>
+                            <li>Menanggapi pertanyaan dan permintaan Anda</li>
+                            <li>Mengirimkan penawaran dan informasi tentang layanan kami</li>
+                            <li>Meningkatkan kualitas layanan dan website kami</li>
+                            <li>Melakukan analisis pasar dan riset pengembangan</li>
+                            <li>Memenuhi kewajiban hukum dan peraturan yang berlaku</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-accent">3. Berbagi Informasi dengan Pihak Ketiga</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p><strong class="text-gradient-accent">CV FUTO INDONESIA</strong> tidak menjual, menukar, atau menyewakan informasi pribadi Anda kepada pihak ketiga. Kami hanya akan membagikan informasi Anda dalam keadaan berikut:</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 ml-6">
+                            <li>Dengan persetujuan eksplisit dari Anda</li>
+                            <li>Untuk memenuhi layanan yang Anda minta (misalnya dengan mitra produksi)</li>
+                            <li>Untuk melindungi hak, properti, atau keselamatan kami atau pihak lain</li>
+                            <li>Untuk mematuhi hukum atau proses hukum yang berlaku</li>
+                            <li>Dengan afiliasi perusahaan kami untuk tujuan operasional internal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-primary">4. Keamanan Data</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Kami mengimplementasikan berbagai langkah keamanan untuk melindungi informasi pribadi Anda:</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 ml-6">
+                            <li>Enkripsi data selama transmisi dan penyimpanan</li>
+                            <li>Akses terbatas ke informasi pribadi</li>
+                            <li>Firewall dan sistem keamanan yang canggih</li>
+                            <li>Audit keamanan berkala</li>
+                            <li>Pelatihan staf tentang privasi data</li>
+                        </ul>
+
+                        <p class="mt-4">Namun, perlu diingat bahwa tidak ada metode transmisi internet atau penyimpanan elektronik yang 100% aman.</p>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-secondary">5. Cookie dan Teknologi Tracking</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Website kami menggunakan cookie dan teknologi serupa untuk:</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 ml-6">
+                            <li>Mengingat preferensi Anda</li>
+                            <li>Menganalisis traffic website</li>
+                            <li>Mempersonalisasi pengalaman browsing</li>
+                            <li>Menyediakan fitur social media</li>
+                            <li>Melakukan advertising yang ditargetkan</li>
+                        </ul>
+
+                        <p class="mt-4">Anda dapat mengatur browser Anda untuk menolak cookie atau memberi tahu saat cookie sedang dikirim.</p>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-accent">6. Hak Privasi Anda</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Sebagai pengguna, Anda memiliki hak untuk:</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 ml-6">
+                            <li>Mengakses informasi pribadi yang kami simpan tentang Anda</li>
+                            <li>Memperbaiki informasi yang tidak akurat</li>
+                            <li>Menghapus informasi pribadi Anda (dalam batas hukum yang berlaku)</li>
+                            <li>Menolak pemrosesan informasi tertentu</li>
+                            <li>Meminta pembatasan pemrosesan data</li>
+                            <li>Memindahkan data Anda ke penyedia layanan lain</li>
+                        </ul>
+
+                        <p class="mt-4">Untuk menggunakan hak ini, silakan hubungi kami melalui informasi kontak yang tersedia.</p>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-primary">7. Kebijakan Retensi Data</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Kami akan menyimpan informasi pribadi Anda hanya selama diperlukan untuk:</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 ml-6">
+                            <li>Memenuhi tujuan pengumpulan data</li>
+                            <li>Memenuhi kewajiban hukum dan peraturan</li>
+                            <li>Menyelesaikan perselisihan</li>
+                            <li>Melaksanakan perjanjian kami</li>
+                        </ul>
+
+                        <p class="mt-4">Setelah periode retensi berakhir, kami akan menghapus atau anonimisasi data Anda dengan aman.</p>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-secondary">8. Perubahan pada Kebijakan Privasi</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Kami dapat memperbarui kebijakan privasi ini dari waktu ke waktu. Perubahan akan diposting di halaman ini dengan tanggal "Terakhir diperbarui" yang baru.</p>
+                        
+                        <p>Perubahan signifikan akan diberitahukan kepada Anda melalui:</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 ml-6">
+                            <li>Email notifikasi</li>
+                            <li>Pemberitahuan di website kami</li>
+                            <li>Komunikasi langsung lainnya</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-accent">9. Kontak Kami</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Jika Anda memiliki pertanyaan tentang kebijakan privasi ini atau praktik privasi kami, silakan hubungi:</p>
+                        
+                        <div class="bg-gray-800 p-6 rounded-xl mt-4">
+                            <p class="mb-2"><strong class="text-white">CV FUTO INDONESIA</strong></p>
+                            <p class="mb-2">Email: privacy@futoindonesia.com</p>
+                            <p class="mb-2">Telepon: +62 21 1234 5678</p>
+                            <p>Alamat: Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card p-8 rounded-2xl">
+                    <h2 class="text-3xl font-bold mb-6 text-gradient-primary">10. Hukum yang Berlaku</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Kebijakan privasi ini diatur oleh dan ditafsirkan sesuai dengan hukum Indonesia. Setiap perselisihan akan diselesaikan melalui peradilan yang kompeten di Indonesia.</p>
+                        
+                        <p class="mt-4">Dengan menggunakan website dan layanan <strong class="text-gradient-primary">CV FUTO INDONESIA</strong>, Anda menyetujui praktik privasi yang dijelaskan dalam kebijakan ini.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-gradient py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">F</span>
+                        </div>
+                        <h3 class="brand-font text-2xl gradient-text">FUTO INDONESIA</h3>
+                    </div>
+                    <p class="text-gray-300">Creative Advertising Agency yang mengubah ide menjadi karya nyata.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html#services" class="hover:text-purple-400 transition">Branding & Design</a></li>
+                        <li><a href="index.html#services" class="hover:text-purple-400 transition">Digital Campaign</a></li>
+                        <li><a href="index.html#services" class="hover:text-purple-400 transition">Video Production</a></li>
+                        <li><a href="index.html#services" class="hover:text-purple-400 transition">Social Media Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html#about" class="hover:text-purple-400 transition">Tentang Kami</a></li>
+                        <li><a href="index.html#portfolio" class="hover:text-purple-400 transition">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Karir</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="privacy.html" class="text-purple-400">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-purple-400 transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-purple-400 transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 mb-4 md:mb-0">&copy; 2024 CV FUTO INDONESIA. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-400 transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.blob-animation');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Dynamic year in footer
+        const currentYear = new Date().getFullYear();
+        document.querySelector('footer p').innerHTML = `&copy; ${currentYear} CV FUTO INDONESIA. All rights reserved.`;
+    </script>
+</body>
+</html>
